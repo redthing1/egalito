@@ -1,0 +1,15 @@
+FROM ubuntu:20.04
+
+SHELL ["/bin/bash", "-c"]
+
+# Install apt packages
+RUN export DEBIAN_FRONTEND=noninteractive
+RUN ln -fs /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+RUN apt-get -y update && \
+  apt-get -y install autoconf build-essential cmake curl \
+  git libtool libboost-dev software-properties-common \
+  make g++ libreadline-dev gdb lsb-release unzip \
+  libc6-dbg libstdc++6-10-dbg
+
+# set up main to run bash
+CMD ["/bin/bash", "-l"]
