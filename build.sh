@@ -1,2 +1,2 @@
 git submodule update --init --recursive
-make -j
+make -j 4
