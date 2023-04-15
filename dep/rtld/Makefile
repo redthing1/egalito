@@ -11,7 +11,8 @@ CFLAGS_D =	-DRTLD_GLOBAL_SIZE=$(shell cat $(BUILDDIR)rtld_global_size) \
 
 LIBC = $(shell readlink -f $(shell $(CC) --print-file-name=libc.so.6))
 
-RUN_GDB = $(GDB) -n -q -x reconstruct.py
+# RUN_GDB = $(GDB) -n -q -x reconstruct.py
+RUN_GDB = $(GDB) -q -x reconstruct.py
 
 GDB_GEN_FILES = rtld.h assign1.c assign2.c generate1.c generate2.c
 GDB_GEN_FILES += pthread.h
